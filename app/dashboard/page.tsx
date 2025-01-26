@@ -192,24 +192,25 @@ export default function Dashboard() {
                 {/* Balance Section */}
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                  <Link href="/dashboard/fund-account">
+                  
                     <Button
                       variant="outline" 
                       size="icon"
                       className="rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 h-10 w-10"
+                      onClick={() => window.location.href = '/dashboard/fund-account'}
                     >
                       <Plus className="h-5 w-5" />
                     </Button>
-                  </Link>
-                  <Link href="/dashboard/transactions">
+                
                     <Button
                       variant="outline"
                       size="icon" 
                       className="rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 h-10 w-10"
+                      onClick={() => window.location.href = '/dashboard/transactions'}
                     >
                       <History className="h-5 w-5" />
                     </Button>
-                  </Link>
+                  
                   </div>
                   <button 
                     onClick={() => setShowBalance(!showBalance)}
