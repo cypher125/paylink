@@ -252,18 +252,22 @@ export default function Dashboard() {
                       variant="outline" 
                       size="icon"
                       className="rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 h-10 w-10"
-                      onClick={() => window.location.href = '/dashboard/fund-account'}
+                      asChild
                     >
-                      <Plus className="h-5 w-5" />
+                      <Link href="/dashboard/fund-account">
+                        <Plus className="h-5 w-5" />
+                      </Link>
                     </Button>
                 
                     <Button
                       variant="outline"
                       size="icon" 
                       className="rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20 h-10 w-10"
-                      onClick={() => window.location.href = '/dashboard/transactions'}
+                      asChild
                     >
-                      <History className="h-5 w-5" />
+                      <Link href="/dashboard/transactions">
+                        <History className="h-5 w-5" />
+                      </Link>
                     </Button>
                   
                   </div>
