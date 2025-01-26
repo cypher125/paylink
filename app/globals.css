@@ -2,20 +2,218 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221 78% 19%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 78% 19%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
+
+@layer utilities {
+  .rounded-custom {
+    border-radius: 1rem;
+  }
+  .rounded-custom-lg {
+    border-radius: 1.5rem;
+  }
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+  
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300;
+  }
+
+  /* Grid styles */
+  .grid-lines {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .grid-opening-effect {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.1) 20%,
+      rgba(255, 255, 255, 0.05) 40%,
+      transparent 60%
+    );
+    transition: all 0.2s ease;
+  }
+
+  /* Grid opening animation */
+  .grid-lines::before,
+  .grid-lines::after {
+    content: '';
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+  }
+
+  /* Vertical expanding lines */
+  .grid-lines::before {
+    left: var(--mouse-x);
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.3) 30%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.3) 70%,
+      transparent
+    );
+    transform-origin: center;
+    animation: expandVertical 2s ease-out infinite;
+  }
+
+  /* Horizontal expanding lines */
+  .grid-lines::after {
+    top: var(--mouse-y);
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.3) 30%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.3) 70%,
+      transparent
+    );
+    transform-origin: center;
+    animation: expandHorizontal 2s ease-out infinite;
+  }
+
+  @keyframes expandVertical {
+    0% {
+      transform: scaleY(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: scaleY(1);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scaleY(0.1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes expandHorizontal {
+    0% {
+      transform: scaleX(0.1);
+      opacity: 0;
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scaleX(0.1);
+      opacity: 0;
+    }
+  }
+
+  .mouse-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.15) 20%,
+      rgba(255, 255, 255, 0.08) 40%,
+      transparent 65%
+    );
+    transition: all 0.15s ease;
+  }
+}
+
