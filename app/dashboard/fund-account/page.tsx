@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, History, CreditCard, Building, Smartphone, Copy, CheckCheck } from "lucide-react"
+import { ArrowLeft, CreditCard, Building, Smartphone, Copy, CheckCheck } from "lucide-react"
 import Link from "next/link"
 import { BottomMenu } from "@/components/BottomMenu"
 
@@ -54,16 +54,17 @@ export default function FundAccountPage() {
       {/* Header */}
       <header className="bg-white border-b">
         <div className="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex items-center gap-4">
-            <Link href="/dashboard" className="text-gray-600 lg:hidden">
-            <ArrowLeft className="h-6 w-6" />
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/dashboard" className="text-gray-600">
+              <ArrowLeft className="h-6 w-6" />
+            </Link>
             <h1 className="text-xl font-semibold">Fund Wallet</h1>
           </div>
-          <Button variant="outline" size="sm" className="hidden lg:flex items-center gap-2">
-            <History className="w-4 h-4" />
-            Transaction History
-          </Button>
+          <Link href="/dashboard/profile" className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full bg-[#0A2357] text-white flex items-center justify-center">
+              <span className="text-sm font-medium">JD</span>
+            </div>
+          </Link>
         </div>
       </header>
 

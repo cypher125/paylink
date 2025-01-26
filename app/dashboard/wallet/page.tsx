@@ -12,7 +12,8 @@ import {
   ChevronRight,
   Copy,
   CheckCheck,
-  History
+  History,
+  ArrowLeft
 } from "lucide-react"
 import Link from "next/link"
 import { BottomMenu } from "@/components/BottomMenu"
@@ -57,6 +58,23 @@ export default function WalletPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pb-20 lg:pb-0">
+      {/* Header */}
+      <header className="bg-white border-b">
+        <div className="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto">
+          <div className="flex items-center gap-4">
+            <Link href="/dashboard" className="text-gray-600">
+              <ArrowLeft className="h-6 w-6" />
+            </Link>
+            <h1 className="text-xl font-semibold">Wallet</h1>
+          </div>
+          <Link href="/dashboard/profile" className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full bg-[#0A2357] text-white flex items-center justify-center">
+              <span className="text-sm font-medium">JD</span>
+            </div>
+          </Link>
+        </div>
+      </header>
+
       <div className="p-4 lg:p-8 max-w-4xl mx-auto space-y-6">
         {/* Balance Card */}
         <Card className="bg-gradient-to-r from-[#0A2357] to-[#1A3B7C] text-white p-6 rounded-2xl shadow-lg">
