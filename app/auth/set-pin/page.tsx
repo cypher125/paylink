@@ -4,7 +4,6 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Eye, EyeOff } from "lucide-react"
-import { Link } from "next/link"
 import { motion } from "framer-motion"
 
 export default function SetPinPage() {
