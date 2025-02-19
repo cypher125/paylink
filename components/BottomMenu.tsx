@@ -2,18 +2,9 @@
 
 import Link from "next/link"
 import { Home, Wallet, Plus, User, Settings } from "lucide-react"
-import { usePathname } from "next/navigation"
 
 export function BottomMenu() {
-  const pathname = usePathname()
 
-  const menuItems = [
-    { icon: Home, name: "Home", href: "/dashboard" },
-    { icon: Wallet, name: "Wallet", href: "/dashboard/wallet" },
-    { icon: Plus, name: "Fund", href: "/dashboard/fund-account", primary: true },
-    { icon: User, name: "Profile", href: "/dashboard/profile" },
-    { icon: Settings, name: "Settings", href: "/dashboard/settings" },
-  ]
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t lg:hidden">

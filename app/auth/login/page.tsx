@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -37,7 +36,7 @@ export default function LoginPage() {
 
           {/* Add register link below the logo */}
           <p className="text-sm text-gray-600">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link 
               href="/auth/register" 
               className="text-[#0A2357] hover:text-[#0A2357]/80 font-medium"
@@ -113,7 +112,7 @@ export default function LoginPage() {
 
           <div className="text-center">
             <p className="text-sm text-gray-600">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link 
                 href="/auth/register"
                 className="font-medium text-[#0A2357] hover:text-[#1A3B7C] transition-colors"

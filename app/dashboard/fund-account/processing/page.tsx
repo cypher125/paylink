@@ -39,7 +39,7 @@ export default function PaymentProcessingPage() {
             router.push('/dashboard/transactions/success')
           }, 1500)
         }
-      } catch (error) {
+      } catch  {
         setStatus('failed')
       }
     }
@@ -132,7 +132,7 @@ export default function PaymentProcessingPage() {
               <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex gap-3">
                 <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-yellow-800">
-                  Please don't close this page while we verify your payment.
+                  Please don&apos;t close this page while we verify your payment.
                 </p>
               </div>
             )}
