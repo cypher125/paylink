@@ -5,7 +5,6 @@ import {
   BarChart3,
   TrendingUp,
   Users,
-  Wallet,
   CreditCard,
   Calendar,
   ChevronDown,
@@ -27,7 +26,7 @@ import {
 } from "recharts"
 
 export default function AnalyticsPage() {
-  const [timeRange, setTimeRange] = useState("Last 7 days")
+  const [timeRange] = useState("Last 7 days")
 
   // Sample data - replace with real data
   const transactionData = [

@@ -9,15 +9,11 @@ import {
   Sun,
   Database,
   Mail,
-  Languages,
-  Clock,
   Smartphone,
   Save,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Switch } from "@/components/ui/switch"
-import { Select } from "@/components/ui/select"
 
 export default function SettingsPage() {
   // Sample data - replace with real data

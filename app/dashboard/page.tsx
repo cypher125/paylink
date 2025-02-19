@@ -355,6 +355,7 @@ export default function Dashboard() {
             </div>
               <div className="bg-white rounded-xl shadow-sm divide-y divide-gray-100">
                 {recentTransactions.map((transaction) => (
+
                   <div
                     key={transaction.id}
                     className="flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
